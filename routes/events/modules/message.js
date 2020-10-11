@@ -8,7 +8,7 @@ module.exports = {
         const result = await axios.post(`${process.env.API_URL}/chat.postMessage`, qs.stringify(args));
         try {
             if (result.data.ok === false){
-                console.log(result);
+                console.log(result.data);
             }
         } catch (e) {
             console.log(e.message);
