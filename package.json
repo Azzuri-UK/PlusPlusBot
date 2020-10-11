@@ -1,0 +1,25 @@
+{
+  "name": "ppb",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "@slack/events-api": "^2.3.4",
+    "@slack/web-api": "^5.12.0",
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "mongodb": "^3.6.2",
+    "mongoose": "^5.10.9",
+    "morgan": "~1.9.1",
+    "pug": "2.0.0-beta11",
+    "qs": "^6.9.4",
+    "text-table": "^0.2.0"
+  }
+}
