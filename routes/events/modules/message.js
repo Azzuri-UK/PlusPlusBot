@@ -7,10 +7,10 @@ module.exports = {
         const result = await axios.post(`${process.env.API_URL}/chat.postMessage`, qs.stringify(args));
         try {
             if (result.data.ok === false){
-
+                console.log(result);
             }
         } catch (e) {
-
+            console.log(e.message);
         }
     },
     increaseUser:  (user, channel) => {
