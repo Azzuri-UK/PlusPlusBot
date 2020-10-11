@@ -21,7 +21,6 @@ module.exports = router;
 
 const processAppMention = (event) => {
     let command = event.text.replace(/<.*?> ?/g, '');
-    let blocks
     switch (command) {
         case 'leaderboard':
             commands.generateLeaderboard(event.channel,'users')

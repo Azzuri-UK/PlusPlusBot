@@ -6,7 +6,7 @@ const f = require('util').format;
 const user = encodeURIComponent(process.env.DB_USER);
 const password = encodeURIComponent(process.env.DB_PASS);
 const authMechanism = 'DEFAULT';
-const url = f('mongodb://%s:%s@localhost:27017?authMechanism=%s',
+const url = f('mongodb://%s:%s@localhost:27017/ppb?authMechanism=%s',
     user, password, authMechanism);
 
 // Database Name

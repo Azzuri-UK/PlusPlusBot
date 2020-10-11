@@ -4,7 +4,6 @@ const database = require('../../../db/database')
 
 module.exports = {
     post: async (args) => {
-        console.log(args);
         const result = await axios.post(`${process.env.API_URL}/chat.postMessage`, qs.stringify(args));
         try {
             if (result.data.ok === false){
