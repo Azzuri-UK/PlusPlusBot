@@ -16,7 +16,7 @@ module.exports = {
     increaseUser:  (user, channel) => {
         database.connect().then(async dbClient => {
             const users = dbClient.collection('users');
-            const query = { _id: user };
+            const query = { _id: user.trim() };
             const update = {$inc: { score: 1 }};
             const options =  { upsert: true }
             let upsertResult = await users.updateOne(query, update, options);
@@ -35,7 +35,7 @@ module.exports = {
     decreaseUser: (user, channel) => {
         database.connect().then(async dbClient => {
             const users = dbClient.collection('users');
-            const query = { _id: user };
+            const query = { _id: user.trim() };
             const update = {$inc: { score: -1 }};
             const options =  { upsert: true }
             let upsertResult = await users.updateOne(query, update, options);
@@ -53,6 +53,7 @@ module.exports = {
     },
 
     increaseThing: (thing, channel) => {
+        console.log(thing)
         database.connect().then(async dbClient => {
             const things = dbClient.collection('things');
             const query = { _id: thing };
