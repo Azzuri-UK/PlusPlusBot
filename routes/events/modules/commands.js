@@ -27,7 +27,7 @@ module.exports = {
         })
         database.connect().then(async dbClient => {
             const collection = dbClient.collection(type);
-            collection.find().sort({score: 1}).limit(10).toArray(function (err, results) {
+            collection.find().sort({score: -1}).limit(10).toArray(function (err, results) {
                 let i = 1;
                 let table = [['Score'.padEnd(10), type === 'users' ? 'User' : 'Thing']]
                 table.push(['--------------------', '--------------------']);
