@@ -20,7 +20,7 @@ module.exports = {
             const update = {$inc: { score: 1 }};
             const options =  { upsert: true }
             let upsertResult = await users.updateOne(query, update, options);
-            if (upsertResult.modifiedCount === 1){
+            if (upsertResult.modifiedCount === 1 || upsertResult.upsertedCount === 1) {
                 let updatedUser = await users.findOne(query);
                 let params = {
                     token: process.env.SLACK_ACCESS_TOKEN,
@@ -39,7 +39,7 @@ module.exports = {
             const update = {$inc: { score: -1 }};
             const options =  { upsert: true }
             let upsertResult = await users.updateOne(query, update, options);
-            if (upsertResult.modifiedCount === 1){
+            if (upsertResult.modifiedCount === 1 || upsertResult.upsertedCount === 1) {
                 let updatedUser = await users.findOne(query);
                 let params = {
                     token: process.env.SLACK_ACCESS_TOKEN,
@@ -60,7 +60,7 @@ module.exports = {
             const update = {$inc: { score: 1 }};
             const options =  { upsert: true }
             let upsertResult = await things.updateOne(query, update, options);
-            if (upsertResult.modifiedCount === 1) {
+            if (upsertResult.modifiedCount === 1 || upsertResult.upsertedCount === 1) {
                 let updatedUser = await things.findOne(query);
                 let params = {
                     token: process.env.SLACK_ACCESS_TOKEN,
