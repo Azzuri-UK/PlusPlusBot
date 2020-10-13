@@ -65,7 +65,7 @@ module.exports = {
                 let params = {
                     token: process.env.SLACK_ACCESS_TOKEN,
                     channel: channel,
-                    text: ':thumbsup: Point added to  ' + thing + '.  It now has ' + updatedUser.score + ' points.',
+                    text: ':thumbsup: Point added to ' + thing + '.  It now has ' + updatedUser.score + ' points.',
                 };
                 await module.exports.post(params);
             }
@@ -84,7 +84,7 @@ module.exports = {
                 let params = {
                     token: process.env.SLACK_ACCESS_TOKEN,
                     channel: channel,
-                    text: ':thumbsdown: Point removed from  ' + thing + '.  It now has ' + updatedUser.score + ' points.',
+                    text: ':thumbsdown: Point removed from ' + thing + '.  It now has ' + updatedUser.score + ' points.',
                 };
                 await module.exports.post(params);
             }
